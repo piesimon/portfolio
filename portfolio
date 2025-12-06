@@ -1,1 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DUSENGE Simon Peirre Portfolio</title>
+<meta name="description" content="Portfolio of Dusenge Simon Peirre – IT expert, web developer, and graphic designer.">
+<meta name="keywords" content="IT services Rwanda, web developer Rwanda, graphic designer Rwanda, portfolio, tech solutions">
+<meta name="author" content="Dusenge Simon Peirre">
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+body.dark-mode {
+    background-color: #121212;
+    color: #e4e4e4;
+}
+body.dark-mode .card {
+    background-color: #1e1e1e;
+    color: #fff;
+}
+.toggle-btn {
+    cursor: pointer;
+}
+</style>
+</head>
+<body class="bg-light text-dark">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">DUSENGE Simon Peirre</a>
+    <!-- DARK MODE TOGGLE -->
+    <button class="btn btn-warning me-2 toggle-btn" onclick="toggleDarkMode()">🌙</button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="py-5 text-white text-center position-relative" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1522199755839-a2bacb67c546?auto=format&fit=crop&w=1500&q=80'); background-size: cover; background-position: center;" data-aos="fade-up">
+  <div class="container py-5">
+    <h1 class="display-3 fw-bold mb-3">Crafting Digital Experiences</h1>
+    <p class="lead mb-4">I build secure, modern & user-friendly IT and design solutions.</p>
+    <a href="#services" class="btn btn-warning btn-lg fw-bold shadow">Explore My Services</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-5" data-aos="fade-up">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-3">About Me</h2>
+    <p>Mission: To deliver reliable, secure, and innovative technology solutions that empower users, enhance business operations, and enable long-term digital growth.</p>
+    <p>Values: Maintain transparency, honesty, and confidentiality in all technology practices.</p>
+    <p>Goals: Reduce operational costs through efficient IT strategies.</p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="py-5 bg-white" data-aos="fade-up">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5">Skills</h2>
+    <div class="row g-4 text-center">
+      <div class="col-md-4"><div class="card p-4 shadow-sm"><h5>Graphic Design</h5><p>Branding, posters, banners.</p></div></div>
+      <div class="col-md-4"><div class="card p-4 shadow-sm"><h5>IT Support</h5><p>Maintenance, networking, troubleshooting.</p></div></div>
+      <div class="col-md-4"><div class="card p-4 shadow-sm"><h5>Web Development</h5><p>Frontend & backend development for digital systems.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="py-5 bg-light" data-aos="fade-up">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5">Services</h2>
+    <div class="row g-4 text-center">
+      <div class="col-md-4"><div class="card h-100 shadow-sm p-3"><h5>Graphic Design</h5><p>Branding & marketing visuals.</p></div></div>
+      <div class="col-md-4"><div class="card h-100 shadow-sm p-3"><h5>IT Services</h5><p>Repair, installation, consulting.</p></div></div>
+      <div class="col-md-4"><div class="card h-100 shadow-sm p-3"><h5>Web Development</h5><p>Websites & full apps.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog" class="py-5 bg-light" data-aos="fade-up">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5">Blog</h2>
+    <div class="row g-4" id="blog-container"></div>
+  </div>
+</section>
+
+<!-- BLOG MODAL -->
+<div class="modal fade" id="blogModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="blogModalTitle"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body" id="blogModalContent"></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact" class="py-5" data-aos="fade-up">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">Contact Me</h2>
+    <form action="https://formsubmit.co/simonpierredusenge@gmail.com" method="POST" class="col-md-6 mx-auto">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
+      <input type="hidden" name="_autoresponse" value="Thank you! I will get back to you soon.">
+      <input type="hidden" name="_subject" value="New contact form submission">
+      <div class="mb-3"><input class="form-control" name="name" placeholder="Your Name" required></div>
+      <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Your Email" required></div>
+      <div class="mb-3"><textarea class="form-control" name="message" placeholder="Your Message" required></textarea></div>
+      <button class="btn btn-primary w-100">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<script>
+// Dark mode toggle
+function toggleDarkMode(){ document.body.classList.toggle('dark-mode'); }
+
+// Blog posts JSON
+const blogPosts = [
+  { title: "Why Your Business Needs a Website", desc: "A website increases trust and reach.", full: "A complete explanation of why websites matter for business growth, digital presence, professionalism, and customer reach." },
+  { title: "Best IT Practices", desc: "How to protect your business systems.", full: "A complete guide on backups, cybersecurity, maintenance schedules, and safe digital practices." },
+  { title: "Power of Good Design", desc: "Brand identity through visuals.", full: "Explains how color, typography, and layout influence branding and customer trust." }
+];
+
+// Load blog posts dynamically
+const blogContainer = document.getElementById("blog-container");
+blogPosts.forEach(p => {
+  blogContainer.innerHTML += `
+    <div class='col-md-4'>
+      <div class='card shadow-sm h-100 p-3'>
+        <h5 class='fw-bold'>${p.title}</h5>
+        <p>${p.desc}</p>
+        <button class='btn btn-primary mt-2' onclick='openPost("${p.title}", "${p.full}")'>Read More</button>
+      </div>
+    </div>`;
+});
+
+// Blog modal function
+function openPost(title, content){
+  document.getElementById('blogModalTitle').innerText = title;
+  document.getElementById('blogModalContent').innerText = content;
+  const modal = new bootstrap.Modal(document.getElementById('blogModal'));
+  modal.show();
+}
+</script>
+
+<!-- Bootstrap JS & AOS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+
+</body>
+</html>
 
